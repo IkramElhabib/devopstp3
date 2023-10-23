@@ -1,5 +1,5 @@
+version: '3'
 services:
-
   spring-boot-app:
     image: backend
     ports:
@@ -10,7 +10,6 @@ services:
       - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-   
 
   mysql:
     image: mysql:5.7
