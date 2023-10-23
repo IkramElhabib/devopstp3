@@ -11,12 +11,12 @@ pipeline {
     }
     stage ("Clone repo"){
       steps {
-        sh "git clone https://github.com/IkramElhabib/jenkins3tp.git"
+        sh "git clone https://github.com/IkramElhabib/devopstp3.git"
       }
     }
     stage("Generate backend image") {
     steps {
-        dir("jenkins3tp") {
+        dir("devopstp3") {
             sh "mvn clean install"
             sh "docker build -t backend ."
         }
@@ -24,7 +24,7 @@ pipeline {
 }
 stage("Run docker compose") {
     steps {
-        dir("jenkins3tp") {
+        dir("devopstp3") {
             sh "docker-compose up -d"
         }
     }
